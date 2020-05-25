@@ -13,8 +13,9 @@ public class IAControl : MonoBehaviour
 
     public Animator anim;
 
-    public int lives=5;
+    public int lives=20;
 
+    public GameObject canvasImg;
     public enum States
     {
         idle,
@@ -28,6 +29,7 @@ public class IAControl : MonoBehaviour
     public States state;
     void Start()
     {
+        canvasImg.SetActive(false);
         ChangeState();
     }
 
@@ -38,6 +40,8 @@ public class IAControl : MonoBehaviour
       
 
         anim.SetFloat("Velocidade", agent.velocity.magnitude);
+
+        
     }
 
     void ChangeState()
@@ -169,10 +173,11 @@ public class IAControl : MonoBehaviour
     {
         agent.isStopped = true;
         anim.SetBool("Morrendo", true);
+        canvasImg.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
         Destroy(gameObject, 5);
        
         yield return new WaitForEndOfFrame();
-
     }
 
     private void OnTriggerEnter(Collider other)

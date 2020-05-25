@@ -27,6 +27,6 @@ public class BoardPopup : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-            popup.SetActive(false);
+        popup.SetActive(false);
     }
 }

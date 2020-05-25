@@ -9,18 +9,13 @@ public class FpsWalk : MonoBehaviour
     Vector3 headRotAxis;
     public CharacterController charac;
     public GameObject prefabProjectile;
-    public GameObject prefabProjectile1;
-    public GameObject prefabProjectile2;
-    public GameObject prefabProjectile3;
-    public GameObject prefabProjectile4;
-    public GameObject prefabProjectile5;
-    public GameObject prefabProjectile6;
-    public GameObject prefabProjectile7;
-    public GameObject prefabProjectile8;
     public GameObject head;
+    public int projetil;
+    public float bombForce = 1000;
     // Start is called before the first frame update
     void Start()
     {
+        Invoke("Explode", 3);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -38,63 +33,7 @@ public class FpsWalk : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject ball = Instantiate(prefabProjectile, transform.position+head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000+ Vector3.up*200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right*500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            GameObject ball = Instantiate(prefabProjectile1, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            GameObject ball = Instantiate(prefabProjectile2, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            GameObject ball = Instantiate(prefabProjectile3, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            GameObject ball = Instantiate(prefabProjectile4, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            GameObject ball = Instantiate(prefabProjectile5, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            GameObject ball = Instantiate(prefabProjectile6, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            GameObject ball = Instantiate(prefabProjectile7, transform.position + head.transform.forward, transform.rotation);
-            ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
-            ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
-            Destroy(ball, 3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            GameObject ball = Instantiate(prefabProjectile8, transform.position + head.transform.forward, transform.rotation);
+            GameObject ball = Instantiate(prefabProjectile, transform.position + head.transform.forward, transform.rotation);
             ball.GetComponent<Rigidbody>().AddForce(head.transform.forward * 1000 + Vector3.up * 200);
             ball.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * 500, ForceMode.Impulse);
             Destroy(ball, 3);
